@@ -17,7 +17,7 @@ class CreateProductsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('price');
-            $table->string('category_id');
+            $table->integer('category_id');
             $table->timestamps();
         });
     }

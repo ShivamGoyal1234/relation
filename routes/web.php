@@ -15,6 +15,12 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 
 Route::get('/', 'ProductController@index');
+Route::get('/add-product', 'ProductController@create');
+Route::post('/add-product', 'ProductController@store');
+
+Route::get('/category', 'CategoryController@index');
+Route::get('/add-category', 'CategoryController@create');
+Route::post('/add-category', 'CategoryController@store');
 
 // Route::get('/', function () {
 //     return view('welcome');

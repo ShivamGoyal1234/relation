@@ -14,24 +14,22 @@
     </head>
     <body>
         <div class="container">
-            <h1>Products </h1>
-                <button class="btn btn-primary float-right mb-4"><a href="{{ url('/add-product') }}">Add Product</a> </button>
+            <h1>Categories </h1>
+                <button class="btn btn-primary float-right mb-4"><a href="{{ url('/add-category') }}">Add Category</a> </button>
             <table class="table table-striped">
                 <thead>
                     <tr>
                         <th scope= "col">#</th>
-                        <th scope= "col">Title</th>
-                        <th scope= "col">Price</th>
-                        <th scope= "col">Category</th>
+                        <th scope= "col">Name</th>
+                        <th scope= "col">Date Created</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($products as $product)
+                    @foreach($categories as $category)
                         <tr>
-                            <th scope="row">{{ $product->id }}  </th>
-                            <td>{{$product->title}}</td>
-                            <td>{{$product->price}}</td>
-                            <td>{{$product->category->name}}</td>
+                            <th scope="row">{{ $category->id }}  </th>
+                            <td>{{ $category->name}}</td>
+                            <td>{{ $category->created_at->diffForHumans() }}</td>
                         </tr>
                     @endforeach
                 </tbody>
