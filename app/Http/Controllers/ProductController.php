@@ -12,7 +12,7 @@ class ProductController extends Controller
     {
         
         $products = Product::with('category')->get();
-        // dd($products);
+        //dd($products);
 
         return view('Welcome',compact('products'));
     }

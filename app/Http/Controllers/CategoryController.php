@@ -9,10 +9,6 @@ class CategoryController extends Controller
 {
     public function index() 
     {
-        
-        // $category = Category::with('product')->get();
-        // // dd($products);
-
-        // return view('Welcome',compact('category'));
+        //
     }
 }
