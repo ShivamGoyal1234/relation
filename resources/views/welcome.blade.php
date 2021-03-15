@@ -16,6 +16,7 @@
         <div class="container">
             <h1>Products </h1>
                 <button class="btn btn-primary float-right mb-4"><a href="{{ url('/add-product') }}">Add Product</a> </button>
+                <button class="btn btn-primary float-right mb-4"><a href="{{ url('/add-category') }}">Add Category</a> </button>
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -23,6 +24,7 @@
                         <th scope= "col">Title</th>
                         <th scope= "col">Price</th>
                         <th scope= "col">Category</th>
+                        <th scope= "col">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -32,6 +34,12 @@
                             <td>{{$product->title}}</td>
                             <td>{{$product->price}}</td>
                             <td>{{$product->category->name}}</td>
+                            <td><a href="{{ url('/edit-product/'.$product->id)}}" class="btn btn-primary"> Edit </td>
+                           <form action="{{ url('/delete-product/'.$product->id)}}" method="POST">
+                                {{method_field('DELETE') }}
+                                {{csrf_field()}}
+                                <td> <button class="btn btn-danger" type="submit">Delete</button> </td>
+                           </form>
                         </tr>
                     @endforeach
                 </tbody>

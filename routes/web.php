@@ -17,6 +17,11 @@ use App\Http\Controllers\ProductController;
 Route::get('/', 'ProductController@index');
 Route::get('/add-product', 'ProductController@create');
 Route::post('/add-product', 'ProductController@store');
+Route::get('/edit-product/{product}', 'ProductController@edit');
+Route::post('/edit-product/{product}', 'ProductController@update');
+Route::delete('/delete-product/{product}', 'ProductController@delete');
+
+
 
 Route::get('/category', 'CategoryController@index');
 Route::get('/add-category', 'CategoryController@create');

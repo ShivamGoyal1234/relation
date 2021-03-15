@@ -16,6 +16,7 @@
         <div class="container">
             <h1>Categories </h1>
                 <button class="btn btn-primary float-right mb-4"><a href="{{ url('/add-category') }}">Add Category</a> </button>
+                <button class="btn btn-primary float-right mb-4"><a href="{{ url('/add-product') }}">Add Product</a> </button>
             <table class="table table-striped">
                 <thead>
                     <tr>

@@ -11,17 +11,17 @@
 <body>
 
     <div class="container">
-    <h1>Add Products </h1>
-        <form method="POST" action="{{ url('/add-product') }}">
+    <h1>Edit Products </h1>
+        <form method="POST" action="{{ url('/edit-product/'.$product->id)}}">
         {{ csrf_field() }}
             <div class="form-group">
                 <label for="exampleFormControlInput1">Title</label>
-                <input type="text" name="title" class="form-control" placeholder="Title">
+                <input type="text" name="title" value=" {{old('title') ?? $product->title }} " class="form-control" placeholder="Title">
             </div>
 
             <div class="form-group">
                 <label for="exampleFormControlInput1">Price</label>
-                <input type="text" name="price" class="form-control" placeholder="Price">
+                <input type="text" name="price" value=" {{old('price') ?? $product->price }} "  class="form-control" placeholder="Price">
             </div>
             
             <label for="exampleFormControlInput1">Accessories</label>
